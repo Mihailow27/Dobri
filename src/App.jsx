@@ -5,12 +5,8 @@ import items from "./data";
 import { firestore } from "./server/firebaseServer";
 
 const allCategories = ["all"];
-//const allCategories = ["all", ...new Set(items.map((item) => item.category))];
 
 function App() {
-  // const user = signInWithEmailAndPassword("admin@admin.com", "admin@admin.com");
-  //const itemss = fetchMenuItems();
-  // console.log(user);
   const [menuItems, setMenuItems] = useState([]);
 
   useEffect(() => {
