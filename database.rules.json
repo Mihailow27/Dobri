@@ -1,0 +1,17 @@
+{
+  "rules": {
+    "users": {
+      "$uid": {
+        ".read": "$uid === auth.uid",
+        ".write": "$uid === auth.uid"
+      }
+    },
+    "posts": {
+      ".read": "auth != null",
+      ".write": "auth != null",
+      "$postId": {
+        ".validate": "newData.hasChildren(['title', 'content', 'author'])"
+      }
+    }
+  }
+}
